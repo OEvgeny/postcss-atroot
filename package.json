@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "PostCSS plugin to place rules directly at the root",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url":  "https://github.com/OEvgeny/postcss-atroot.git"
+  },
   "scripts": {
     "start": "gulp",
     "test": "gulp"
