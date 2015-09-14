@@ -16,12 +16,13 @@ Which would produce:
 .parent { ... }
 ```
 
-Also it will play well with ``@include``.
+It will play well also with ``@include``, and may be very useful when developing css frameworks.
 
 ## Usage
 
 ```js
-postcss([ require('postcss-mixins') ])
+postcss([ require('postcss-atroot') ])
 ```
 
 See [PostCSS] docs for examples for your environment.
+[PostCSS]: https://github.com/postcss/postcss
