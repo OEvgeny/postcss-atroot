@@ -16,7 +16,7 @@ Which would produce:
 .parent { ... }
 ```
 
-It will play well with postcss ``@include`` plugins.
+It will play well with postcss ``@include`` plugins.  
 fo.css:
 ```css
 @at-root {
@@ -46,7 +46,7 @@ Will produce:
 ## Usage
 
 ```js
-postcss([ require('postcss-atroot') ])
+postcss([ require('postcss-atroot')() ])
 ```
 
 See [PostCSS] docs for examples for your environment.
