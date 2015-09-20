@@ -16,7 +16,7 @@ Which would produce:
 .parent { ... }
 ```
 
-It will play well also with ``@include``, and may be very useful when developing css frameworks.
+It will play well also ``@include``.
 
 ## Usage
 
