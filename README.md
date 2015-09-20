@@ -17,7 +17,7 @@ Which would produce:
 ```
 
 It will play well with postcss ``@include`` plugins.  
-fo.css:
+foo.css:
 ```css
 @at-root {
   @viewport { width: device-width; }
@@ -50,4 +50,5 @@ postcss([ require('postcss-atroot')() ])
 ```
 
 See [PostCSS] docs for examples for your environment.
+
 [PostCSS]: https://github.com/postcss/postcss
