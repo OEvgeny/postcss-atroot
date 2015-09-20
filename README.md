@@ -16,7 +16,32 @@ Which would produce:
 .parent { ... }
 ```
 
-It will play well also ``@include``.
+It will play well with postcss ``@include`` plugins.
+fo.css:
+```css
+@at-root {
+  @viewport { width: device-width; }
+}
+.foo {
+  color: blue;
+}
+```
+
+bar.css:
+```css
+.bar {
+  @import "foo.css";
+}
+
+```
+Will produce:
+```css
+@viewport { width: device-width; }
+
+.bar .foo {
+  color: blue; 
+}
+```
 
 ## Usage
 
