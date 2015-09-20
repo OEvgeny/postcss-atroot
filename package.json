@@ -1,6 +1,6 @@
 {
   "name": "postcss-atroot",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "PostCSS plugin to place rules directly at the root",
   "main": "index.js",
   "repository": {
