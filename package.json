@@ -21,6 +21,9 @@
   ],
   "author": "OEvgeny",
   "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
   "devDependencies": {
     "chai": "^4.3.4",
     "eslint": "^7.26.0",
