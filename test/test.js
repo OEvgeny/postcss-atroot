@@ -2,7 +2,7 @@ var postcss = require('postcss')
 var expect = require('chai').expect
 var atroot = require('../')
 
-function test(input, output, opts) {
+function test (input, output, opts) {
   var result = postcss(atroot(opts)).process(input)
   expect(result.css).to.eql(output)
   expect(result.warnings()).to.be.empty
