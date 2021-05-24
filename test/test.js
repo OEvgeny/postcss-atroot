@@ -2,7 +2,7 @@ var postcss = require('postcss')
 var expect = require('chai').expect
 var atroot = require('../')
 
-var test = function (input, output, opts) {
+function test(input, output, opts) {
   var result = postcss(atroot(opts)).process(input)
   expect(result.css).to.eql(output)
   expect(result.warnings()).to.be.empty
@@ -10,15 +10,31 @@ var test = function (input, output, opts) {
 
 /*eslint no-undef: 0*/
 describe('postcss-atroot', function () {
-
   it('places nodes before parent rule', function () {
-    test('.test {@at-root {.root {color: black}}}',
-      '.root {\n    color: black\n}\n.test {}')
+    test(
+      '.test {@at-root {.root {color: black}}}',
+      '.root {color: black}.test {}'
+    )
+  })
+
+  it('places nodes before parent rule, recursively', function () {
+    test(
+      '.test { .innertest { @at-root {.root {color: black}}}}',
+      '.root {color: black}.test { .innertest {}}'
+    )
+  })
+
+  it('places nodes before parent rule, keeps nested media', function () {
+    test(
+      '.test { .innertest { @at-root { @media(print) {.root {color: black}}}}}',
+      ' @media(print) {.root {color: black}} .test { .innertest {}}'
+    )
   })
 
   it('saves nodes order', function () {
-    test('.test {@at-root {color: white;color: black;color: green}}',
-      'color: white;\ncolor: black;\ncolor: green;\n.test {}')
+    test(
+      '.test {@at-root {color: white;color: black;color: green}}',
+      'color: white;color: black;color: green;\n.test {}'
+    )
   })
-
 })
