@@ -1,4 +1,4 @@
-# PostCSS at-root [![Circle CI](https://circleci.com/gh/OEvgeny/postcss-atroot.svg?style=svg)](https://circleci.com/gh/OEvgeny/postcss-atroot)
+# PostCSS at-root [![Node.js CI](https://github.com/OEvgeny/postcss-atroot/actions/workflows/nodejs.yml/badge.svg)](https://github.com/OEvgeny/postcss-atroot/actions/workflows/nodejs.yml)
 PostCSS plugin to place rules directly at the root node.
 
 The ``@at-root`` causes one or more rules to be emitted at the root of the document, rather than being nested beneath their parent selectors:
