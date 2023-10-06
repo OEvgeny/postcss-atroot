@@ -13,21 +13,21 @@ describe('postcss-atroot', function () {
   it('places nodes before parent rule', function () {
     test(
       '.test {@at-root {.root {color: black}}}',
-      '.root {color: black}.test {}'
+      '.root {color: black}\n.test {}'
     )
   })
 
   it('places nodes before parent rule, recursively', function () {
     test(
       '.test { .innertest { @at-root {.root {color: black}}}}',
-      '.root {color: black}.test { .innertest {}}'
+      '.root {color: black} .test { .innertest {}}'
     )
   })
 
   it('places nodes before parent rule, keeps nested media', function () {
     test(
       '.test { .innertest { @at-root { @media(print) {.root {color: black}}}}}',
-      ' @media(print) {.root {color: black}} .test { .innertest {}}'
+      ' @media(print) {.root {color: black}}.test { .innertest {}}'
     )
   })
 
